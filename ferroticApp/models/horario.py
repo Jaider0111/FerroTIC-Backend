@@ -3,7 +3,7 @@ from django.db import models
 
 class Horario(models.Model):
     idHorario = models.BigAutoField(primary_key=True)
-    diaInicio = models.DateTimeField()
+    diaInicio = models.CharField()
     diaFin = models.DateTimeField(default=0)
-    fechaInicio = models.DateTimeField()
+    horaInicio = models.TimeField()
     fechaFin = models.DateTimeField(default=True)
