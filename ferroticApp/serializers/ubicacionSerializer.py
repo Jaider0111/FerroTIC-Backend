@@ -3,4 +3,4 @@ from rest_framework import serializers
 class UbicacionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ubicacion
-        fields = ['departamento', 'ciudad', 'direccion','barrio','numeroinmueble','instruccionesadicionales','estado','fechaactualizacion']
+        fields = ['departamento', 'ciudad', 'direccion','barrio','numeroInmueble','instruccionesAdicionales','estado','fechaActualizacion']
