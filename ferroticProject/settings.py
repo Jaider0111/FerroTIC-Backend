@@ -71,6 +71,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+AUTH_USER_MODEL = 'ferroticApp.User'
+
+AUTH_USER_MODEL = 'ferroticApp.Usuario'
 
 ROOT_URLCONF = 'ferroticProject.urls'
 
