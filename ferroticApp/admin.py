@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Comentario, Producto, Usuario, Mensaje, Archivo, ProductoPedido, Horario, Ubicacion
+from .models import Pedido, Comentario, Producto, Usuario, Mensaje, Archivo, ProductoPedido, Horario, Ubicacion
 
+admin.site.register(Pedido)
 admin.site.register(Comentario)
 admin.site.register(Producto)
 admin.site.register(Usuario)

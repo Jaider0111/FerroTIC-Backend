@@ -1,3 +1,4 @@
+from .pedido import Pedido
 from .comentario import Comentario 
 from .producto import Producto 
 from .mensaje import Mensaje
