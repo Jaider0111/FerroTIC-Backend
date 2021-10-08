@@ -1,11 +1,14 @@
 from django.db import models
-from .user import User
+from .producto import Producto
+from .usuario import Usuario
+
 
 class Comentario(models.Model):
-    Id_Comentario = models.AutoField(primary_key=True)
-    IdUsuario = models.ForeignKey(User, related_name ='account', on_delete=models.CASCADE)
-    Tipo = models.CharField('Nombre', max_length = 25, unique=True)
-    Contenido = models.CharField('Nombre', max_length = 100, unique=True)
-    Fecha = models.DateTimeField()
-    Likes = models.IntegerField(default=0)
-    Dislikes = models.IntegerField(default=0)
+    idComentario = models.BigAutoField(primary_key=True)
+    producto=models.ForeignKey(Producto,related_name ='comentarios', on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, related_name ='comentarios', on_delete=models.CASCADE)
+    tipo = models.CharField(max_length = 25)
+    contenido = models.TextField()
+    fecha = models.DateTimeField()
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)

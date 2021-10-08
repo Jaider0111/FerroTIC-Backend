@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Comentario
+from .models import Producto
 
-# Register your models here.
+admin.site.register(Comentario)
+admin.site.register(Producto)
