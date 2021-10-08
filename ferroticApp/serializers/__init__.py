@@ -1,3 +1,5 @@
+from .mensajeSerializer import MensajeSerializer
+from .usuarioSerializer import UsuarioSerializer
 from .archivoSerializer import ArchivoSerializer
 from .productoPedidoSerializer import ProductoPedidoSerializer
 from .horarioSerializer import HorarioSerializer

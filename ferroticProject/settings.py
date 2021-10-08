@@ -73,6 +73,8 @@ REST_FRAMEWORK = {
 }
 AUTH_USER_MODEL = 'ferroticApp.User'
 
+AUTH_USER_MODEL = 'ferroticApp.Usuario'
+
 ROOT_URLCONF = 'ferroticProject.urls'
 
 TEMPLATES = [
