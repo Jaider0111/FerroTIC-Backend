@@ -1,3 +1,5 @@
 from django.contrib import admin
-
-# Register your models here.
+from .models.horario import Horario
+from .models.ubicacion import Ubicacion
+admin.site.register(Horario)
+admin.site.register(Ubicacion)
