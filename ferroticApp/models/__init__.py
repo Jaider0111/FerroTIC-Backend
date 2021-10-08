@@ -1,3 +1,5 @@
+from .comentario import Comentario 
+from .producto import Producto 
 from .mensaje import Mensaje
 from .usuario import Usuario
 from .archivo import Archivo
