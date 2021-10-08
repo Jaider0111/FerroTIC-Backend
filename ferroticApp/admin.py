@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Archivo,ProductoPedido
 
-# Register your models here.
+admin.site.register(Archivo)
+admi.site.register(ProductoPedido)
