@@ -4,6 +4,6 @@ from django.db import models
 class Horario(models.Model):
     idHorario = models.BigAutoField(primary_key=True)
     diaInicio = models.CharField()
-    diaFin = models.DateTimeField(default=0)
+    diaFin = models.CharField()
     horaInicio = models.TimeField()
-    fechaFin = models.DateTimeField(default=True)
+    horaFin = models.TimeField()
