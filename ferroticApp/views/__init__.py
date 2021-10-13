@@ -1,0 +1,2 @@
+from .usuarioDetailview import UsuarioDetailView
+from .productoDetailView import ProductoDetailView
