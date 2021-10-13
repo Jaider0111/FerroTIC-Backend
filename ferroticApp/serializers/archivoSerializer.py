@@ -1,7 +1,11 @@
-from ferroticApp.models.horario import Archivo
+from ferroticApp.models import Archivo
 from rest_framework import serializers
+
+
 class ArchivoSerializer(serializers.ModelSerializer):
-    idProducto = serializers.IntegerField(source = "producto.idProducto")
+    idProducto = serializers.IntegerField(source="producto.idProducto")
+
     class Meta:
         model = Archivo
-        fields = ['idProducto','idArchivo','archivo', 'tipoContenido', 'vistaPrevia',]
+        fields = ['idProducto', 'idArchivo', 'archivo',
+                  'tipoContenido', 'vistaPrevia', ]

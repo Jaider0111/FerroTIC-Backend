@@ -4,7 +4,6 @@ from rest_framework import serializers
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
-    idUbicacion = serializers.IntegerField(source='ubicacion.idUbicacion')
 
     class Meta:
         model = Usuario
@@ -17,7 +16,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
             'nombre',
             'fechaNacimiento',
             'telefono',
-            'idUbicacion',
+            'ubicacion',
             'fotoPerfil',
             'administrador',
             'codigo'

@@ -28,15 +28,15 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     correo = models.EmailField(max_length=100, unique=True)
     password = models.CharField(max_length=256)
     tipoDocumento = models.CharField(max_length=30)
-    numeroDocumento = models.BigIntegerField()
+    numeroDocumento = models.BigIntegerField(unique=True)
     nombre = models.CharField(max_length=30)
     fechaNacimiento = models.DateField()
-    telefono = models.BigIntegerField()
+    telefono = models.BigIntegerField(null=True)
     ubicacion = models.ForeignKey(
-        Ubicacion, related_name='usuario', on_delete=models.CASCADE)
-    fotoPerfil = models.URLField()
+        Ubicacion, related_name='usuario', on_delete=models.CASCADE, null=True, blank=True, default=None)
+    fotoPerfil = models.URLField(null=True)
     administrador = models.BooleanField(default=False)
-    codigo = models.BigIntegerField()
+    codigo = models.BigIntegerField(unique=True, null=True)
 
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'
