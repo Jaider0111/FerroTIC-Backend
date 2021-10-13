@@ -14,7 +14,7 @@ class EditarCarrito(views.APIView):
         
         serializer = ProductoPedidoSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(data)
+            serializer.save()
             
             return Response(serializer.data,status = status.HTTP_201_CREATED)
     
