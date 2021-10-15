@@ -9,12 +9,13 @@ from rest_framework.permissions import IsAuthenticated
 
 from ferroticApp.serializers.productoSerializer import ProductoSerializer
 
+
 class CrearProductosView(generics.CreateAPIView):
 
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
-    #permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
 
-    def post(self,request,*args, **kwargs):
+    def post(self, request, *args, **kwargs):
 
-        return super().post(request,*args, **kwargs)
+        return super().post(request, *args, **kwargs)

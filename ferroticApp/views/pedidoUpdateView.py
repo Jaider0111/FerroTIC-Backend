@@ -9,4 +9,4 @@ from ferroticApp.serializers import PedidoSerializer
 class PedidoUpdateView(generics.UpdateAPIView):
     queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
-    #permission_classes =(IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)

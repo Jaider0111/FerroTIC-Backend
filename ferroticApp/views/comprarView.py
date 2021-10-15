@@ -3,16 +3,14 @@ from django.conf import settings
 from rest_framework import views, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.backends import TokenBackend
 
-from ferroticApp.models import Pedido, pedido
-from ferroticApp.models.productoPedido import ProductoPedido
-from ferroticApp.serializers import PedidoSerializer
+from ferroticApp.models import Pedido
 
 from datetime import datetime
 
 
 class ComprarView(views.APIView):
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):
 
