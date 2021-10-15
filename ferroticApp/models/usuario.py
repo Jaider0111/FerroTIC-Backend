@@ -30,7 +30,7 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     tipoDocumento = models.CharField(max_length=30)
     numeroDocumento = models.BigIntegerField(unique=True)
     nombre = models.CharField(max_length=30)
-    fechaNacimiento = models.DateField()
+    fechaNacimiento = models.DateField(null=True)
     telefono = models.BigIntegerField(null=True)
     ubicacion = models.ForeignKey(
         Ubicacion, related_name='usuario', on_delete=models.CASCADE, null=True, blank=True, default=None)
