@@ -12,7 +12,7 @@ from ferroticApp.services.firebaseService import firebase
 class UsuarioRegistroView(views.APIView):
 
     def post(self, request, *args, **kwargs):
-        if request.data["image"] != None:
+        if "image" in request.data:
             imagen = request.data["image"]
             extension = imagen["name"].split('.')[-1]
             file = base64.b64decode(imagen["data"])
