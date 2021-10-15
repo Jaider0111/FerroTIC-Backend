@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from ferroticApp.models.usuario import Usuario
 from ferroticApp.serializers.usuarioSerializer import UsuarioSerializer
 
+
 class UsuarioDetailView(generics.RetrieveAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
@@ -16,10 +17,10 @@ class UsuarioDetailView(generics.RetrieveAPIView):
 
         token = request.META.get('HTTP_AUTHORIZATION')[7:]
         tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
-        valid_data = tokenBackend.decode(token,verify=False)
+        valid_data = tokenBackend.decode(token, verify=False)
 
-        if valid_data['idUsuario'] != kwargs['pk']:
-            stringResponse = {'detail':'Unauthorized Request'}
+        if valid_data['user_id'] != kwargs['pk']:
+            stringResponse = {'detail': 'Unauthorized Request'}
             return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)
-    
+
         return super().get(request, *args, **kwargs)

@@ -6,17 +6,7 @@ from ferroticApp.models import Pedido
 from ferroticApp.serializers import PedidoSerializer
 
 
-class PedidoUpdateView(generics.updateAPIView):
-    queryset = Pedido.objects.all() 
+class PedidoUpdateView(generics.UpdateAPIView):
+    queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
-    permission_classes =(IsAuthenticated,)
-    
-    
-
-        
-
-        
-
-
-
-        
+    #permission_classes =(IsAuthenticated,)

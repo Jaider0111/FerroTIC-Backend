@@ -6,5 +6,6 @@ from .usuarioLoginView import UsuarioLoginView
 from .comprarView import ComprarView
 from .productoUpdateView import ProductoUpdateView
 from .productoDeleteView import ProductoDeleteView
-from .pedidoUpdateView import PedidoUpdateView 
+from .pedidoUpdateView import PedidoUpdateView
 from .crearProductosView import CrearProductosView
+from .crearPedidoView import CrearPedidoView

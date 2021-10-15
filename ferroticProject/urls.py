@@ -1,5 +1,5 @@
 from django.urls import path
-from ferroticApp.views import UsuarioLoginView, ProductosBusqueda, UsuarioRegistroView, ProductoUpdateView, ProductoDeleteView, ComprarView, PedidoUpdateView
+from ferroticApp.views import UsuarioLoginView, ProductosBusqueda, UsuarioRegistroView, ProductoUpdateView, ProductoDeleteView, ComprarView, PedidoUpdateView, CrearPedidoView
 from rest_framework_simplejwt.views import TokenRefreshView
 from ferroticApp import views
 from django.contrib import admin
@@ -19,6 +19,7 @@ urlpatterns = [
     path('producto/update/<int:pk>', ProductoUpdateView.as_view()),
     path('producto/delete/<int:pk>', ProductoDeleteView.as_view()),
     path('pedido/update/<int:pk>', PedidoUpdateView.as_view()),
-    path('usuario/<int:pk>/', views.UsuarioDetailView.as_view()),
-    path('producto/<int:pk>/', views.ProductoDetailView.as_view()),
+    path('usuario/<int:pk>', views.UsuarioDetailView.as_view()),
+    path('producto/<int:pk>', views.ProductoDetailView.as_view()),
+    path('pedido/crear', CrearPedidoView.as_view()),
 ]

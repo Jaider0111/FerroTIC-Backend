@@ -9,14 +9,16 @@ from ferroticApp.models import Pedido, pedido
 from ferroticApp.models.productoPedido import ProductoPedido
 from ferroticApp.serializers import PedidoSerializer
 
+from datetime import datetime
+
+
 class ComprarView(views.APIView):
 
-    def get(self,request,*args, **kwargs):
+    def get(self, request, *args, **kwargs):
 
-        id = kwargs['pk'] 
-        pedido = Pedido.objects.get(idPedido = id)
+        id = kwargs['pk']
+        pedido = Pedido.objects.get(idPedido=id)
         pedido.estado = 'ENVIADA'
+        pedido.fechaCompra = datetime.now()
         pedido.save()
         return Response({'exitoso': True}, status.HTTP_200_OK)
-        
-        
