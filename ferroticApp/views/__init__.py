@@ -4,5 +4,7 @@ from .usuarioRegistroView import UsuarioRegistroView
 from .productosBusqueda import ProductosBusqueda
 from .usuarioLoginView import UsuarioLoginView
 from .comprarView import ComprarView
+from .productoUpdateView import ProductoUpdateView
+from .productoDeleteView import ProductoDeleteView
+from .pedidoUpdateView import PedidoUpdateView 
 from .crearProductosView import CrearProductosView
-
