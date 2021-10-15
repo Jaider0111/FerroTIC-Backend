@@ -1,13 +1,9 @@
 from django.urls import path
-<<<<<<< HEAD
-from ferroticApp.views import UsuarioLoginView, ProductosBusqueda, UsuarioRegistroView, ProductoUpdateView, ProductoDeleteView
-=======
-from ferroticApp.views import UsuarioLoginView, ProductosBusqueda, UsuarioRegistroView,PedidoUpdateView,comprarView
-from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
+from ferroticApp.views import UsuarioLoginView, ProductosBusqueda, UsuarioRegistroView, PedidoUpdateView, ProductoDeleteView
+from rest_framework_simplejwt.views import TokenRefreshView
 from ferroticApp import views
 from django.contrib import admin
-from ferroticApp.views import UsuarioLoginView, ProductosBusqueda, UsuarioRegistroView
->>>>>>> 371ebc57a40011d4d3af7c2e2ba66db3742e10a6
+from ferroticApp.views import UsuarioLoginView, ProductosBusqueda, ProductoUpdateView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 from ferroticApp.views.crearProductosView import CrearProductosView
@@ -18,14 +14,11 @@ urlpatterns = [
     path('refresh', TokenRefreshView.as_view()),
     path('registro', UsuarioRegistroView.as_view()),
     path('productos', ProductosBusqueda.as_view()),
-<<<<<<< HEAD
     path('producto/update/<int:pk>', ProductoUpdateView.as_view()),
     path('producto/delete/<int:pk>', ProductoDeleteView.as_view()),
-=======
     path('pedido/update/<int:pk>', PedidoUpdateView.as_view()),
     path('usuario/<int:pk>/', views.UsuarioDetailView.as_view()),
     path('producto/<int:pk>/', views.ProductoDetailView.as_view()),
-    path('comprar', comprarView.Comprar.as_view()),
+    path('comprar', views.Comprar.as_view()),
     path('producto/create', CrearProductosView.as_view()),
->>>>>>> 371ebc57a40011d4d3af7c2e2ba66db3742e10a6
 ]
