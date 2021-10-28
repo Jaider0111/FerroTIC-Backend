@@ -9,3 +9,4 @@ from .productoDeleteView import ProductoDeleteView
 from .pedidoUpdateView import PedidoUpdateView
 from .crearProductosView import CrearProductosView
 from .crearPedidoView import CrearPedidoView
+from .pedidoDetalleView import PedidoDetalleView
