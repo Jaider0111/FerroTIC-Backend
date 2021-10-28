@@ -1,10 +1,12 @@
-from ferroticApp.models import ProductoPedido
+from ferroticApp.models import ProductoPedido, Producto, Pedido
 from rest_framework import serializers
 
 
 class ProductoPedidoSerializer(serializers.ModelSerializer):
-    idProducto = serializers.IntegerField(source='producto.idProducto')
-    idPedido = serializers.IntegerField(source="pedido.idPedido")
+    idProducto = serializers.PrimaryKeyRelatedField(
+        write_only=True, queryset=Producto.objects.all(), source='producto')
+    idPedido = serializers.PrimaryKeyRelatedField(
+        write_only=True, queryset=Pedido.objects.all(), source='pedido')
 
     class Meta:
         model = ProductoPedido

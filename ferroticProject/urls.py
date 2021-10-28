@@ -23,4 +23,6 @@ urlpatterns = [
     path('producto/<int:pk>', views.ProductoDetailView.as_view()),
     path('pedido/crear', CrearPedidoView.as_view()),
     path('pedido/detalle/<int:pk>', PedidoDetalleView.as_view()),
+    path('pedido/producto/create', CrearProductoPedidoView.as_view()),
+    path('pedido/producto/<int:pk>', ProductoPedidoRUDView.as_view()),
 ]

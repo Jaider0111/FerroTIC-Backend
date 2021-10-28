@@ -10,3 +10,5 @@ from .pedidoUpdateView import PedidoUpdateView
 from .crearProductosView import CrearProductosView
 from .crearPedidoView import CrearPedidoView
 from .pedidoDetalleView import PedidoDetalleView
+from .crearProductoPedidoView import CrearProductoPedidoView
+from .productoPedidoRUDView import ProductoPedidoRUDView

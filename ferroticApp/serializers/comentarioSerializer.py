@@ -1,9 +1,10 @@
-from ferroticApp.models.comentario import Comentario
+from ferroticApp.models.comentario import Comentario, Producto
 from rest_framework import serializers
 
 
 class ComentarioSerializer(serializers.ModelSerializer):
-    idProducto = serializers.IntegerField(source='producto.idProducto')
+    idProducto = serializers.PrimaryKeyRelatedField(
+        write_only=True, queryset=Producto.objects.all(), source='producto')
     idUsuario = serializers.IntegerField(source='usuario.idUsuario')
 
     class Meta:

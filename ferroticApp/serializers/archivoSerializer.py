@@ -1,9 +1,10 @@
-from ferroticApp.models import Archivo
+from ferroticApp.models import Archivo, Producto
 from rest_framework import serializers
 
 
 class ArchivoSerializer(serializers.ModelSerializer):
-    idProducto = serializers.IntegerField(source="producto.idProducto")
+    idProducto = serializers.PrimaryKeyRelatedField(
+        write_only=True, queryset=Producto.objects.all(), source='producto')
 
     class Meta:
         model = Archivo
