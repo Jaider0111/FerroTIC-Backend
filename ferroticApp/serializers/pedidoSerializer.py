@@ -12,3 +12,4 @@ class PedidoSerializer(serializers.ModelSerializer):
         model = Pedido
         fields = ['idPedido', 'fechaCompra', 'fechaEntrega', 'total', 'ubicacion', 'idUsuarioComprador', 'idUsuarioVendedor',
                   'telefono', 'nombreReceptor', 'estado', 'numeroArticulos', 'observaciones']
+        depth = 1
