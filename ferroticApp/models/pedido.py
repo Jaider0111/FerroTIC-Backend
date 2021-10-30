@@ -12,8 +12,8 @@ class Pedido(models.Model):
     fechaCompra = models.DateTimeField(null=True)
     fechaEntrega = models.DateTimeField(null=True)
     total = models.IntegerField(null=True)
-    ubicacion = models.ForeignKey(
-        Ubicacion, related_name="pedidos", on_delete=models.CASCADE, null=True, blank=True)
+    ciudad = models.CharField(max_length=50, null=True)
+    direccion = models.CharField(max_length=50, null=True)
     telefono = models.BigIntegerField(null=True)
     nombreReceptor = models.CharField(max_length=70, null=True)
     estado = models.CharField(max_length=30)

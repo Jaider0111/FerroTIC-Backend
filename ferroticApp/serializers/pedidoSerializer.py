@@ -10,6 +10,6 @@ class PedidoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pedido
-        fields = ['idPedido', 'fechaCompra', 'fechaEntrega', 'total', 'ubicacion', 'idUsuarioComprador', 'idUsuarioVendedor',
+        fields = ['idPedido', 'fechaCompra', 'fechaEntrega', 'total', 'ciudad', 'direccion', 'idUsuarioComprador', 'idUsuarioVendedor',
                   'telefono', 'nombreReceptor', 'estado', 'numeroArticulos', 'observaciones']
         depth = 1
